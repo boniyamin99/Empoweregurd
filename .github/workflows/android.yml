@@ -24,6 +24,9 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
+    - name: Fix line endings of gradlew
+      run: sed -i 's/\r$//' gradlew
+
     - name: Make gradlew executable
       run: chmod +x gradlew
 
@@ -31,7 +34,7 @@ jobs:
       run: cp .env.example .env
 
     - name: Decode debug keystore
-      run: base64 -d debug.keystore.base64 > debug.keystore
+      run: tr -d '\r\n ' < debug.keystore.base64 | base64 -d > debug.keystore
 
     - name: Build Debug APK
       run: ./gradlew :app:assembleDebug
