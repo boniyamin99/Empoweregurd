@@ -1,0 +1,6 @@
+{
+  "name": "EmpowerGuard",
+  "description": "Premium Women Safety & Protection Application with Stealth notes camouflage, Smart SOS offline fallback, Journey Watch timer, Fake Call simulator, and support directory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
